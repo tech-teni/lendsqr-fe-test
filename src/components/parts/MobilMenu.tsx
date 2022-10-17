@@ -6,17 +6,22 @@ interface sideBarProps {
   sideBar: boolean;
 }
 
-const Sidebar: React.FC<sideBarProps> = ({ showSideBar, sideBar }) => {
+const MobileMenu: React.FC<sideBarProps> = ({ showSideBar, sideBar }) => {
   const { pathname } = useLocation();
   let username: { name: string; number: number } = {
     name: "hello",
     number: 12,
   };
 
+  console.log(sideBar);
   let num: {}[];
 
   return (
-    <div className="side-bar col-lg-2 col-md-1 col-sm-1">
+    <div
+      className="side-bar col-lg-2 col-md-1 "
+      id="mobile-menu"
+      style={{ display: sideBar ? "flex" : "none" }}
+    >
       <div className="organization d-flex flex-row mb-4 justify-content-center align-items-center">
         <label htmlFor="organization">
           <svg
@@ -769,4 +774,4 @@ const Sidebar: React.FC<sideBarProps> = ({ showSideBar, sideBar }) => {
   );
 };
 
-export default Sidebar;
+export default MobileMenu;

@@ -50,8 +50,77 @@
   padding-left: 25px;
 }
 
+@media screen and (max-width: 12px) {
+  .side-bar {
+    width: 10%;
+  }
+  .side-bar .side-link h5 {
+    display: none;
+  }
+  .side-bar .organization {
+    padding-left: 25px;
+  }
+  .side-bar .organization select {
+    display: none;
+  }
+  .side-bar .organization label {
+    display: none;
+  }
+  .side-bar h3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 1046px) {
+  .side-bar .side-link h5 {
+    display: none;
+  }
+  .side-bar .organization {
+    padding-left: 25px;
+  }
+  .side-bar .organization select {
+    display: none;
+  }
+  .side-bar .organization label {
+    display: none;
+  }
+  .side-bar h3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  #mobile-menu {
+    display: none;
+    width: 10%;
+    box-sizing: border-box;
+  }
+  .section-content {
+    width: 90%;
+  }
+  .toggle-mobile-menu {
+    display: none;
+  }
+}
 @media screen and (max-width: 500px) {
   .side-bar {
     display: none;
+    width: 40%;
   }
+  .toggle-mobile-menu {
+    display: block;
+    margin-bottom: 10px;
+    color: #213f7d;
+  }
+}
+@media screen and (min-width: 500px) {
+  .toggle-mobile-menu {
+    display: none;
+  }
+  #mobile-menu {
+    display: none;
+    width: 10%;
+    box-sizing: border-box;
+  }
+}
+.toggle-mobile-menu {
+  color: #213f7d;
 }/*# sourceMappingURL=sidebar.css.map */

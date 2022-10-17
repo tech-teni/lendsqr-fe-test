@@ -65,12 +65,15 @@ body {
   }
   .total-users {
     margin-bottom: 50px;
+
     .user-card {
       width: 95%;
       @include display(column);
       justify-content: center;
       align-items: flex-start;
-      padding: 20px 25px;
+      padding: 20px 0px;
+      padding-left: 20px;
+
       background: #ffffff;
       border: 1px solid rgba(33, 63, 125, 0.06);
       box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -297,6 +300,13 @@ body {
 }
 
 //details page
+table {
+  width: 100%;
+
+  tr {
+    width: 100%;
+  }
+}
 .user-card2 {
   width: 100%;
   @include display(column);
@@ -352,7 +362,7 @@ body {
     .info-3 {
       @include display(column);
       justify-content: center;
-
+      color: $primaryColor;
       align-items: center;
       width: 20%;
     }
@@ -437,9 +447,104 @@ body {
   }
 }
 
+// ************************
 @media screen and (max-width: $mediaQueriesPhone) {
-  .side-bar {
-    display: none;
-    width: 40%;
+  .user-card2 {
+    .user-card-info {
+      justify-content: space-around;
+      .info-1 {
+        img {
+          width: 50px;
+          height: 50px;
+        }
+        .user-full-name {
+          margin-left: 20px;
+          // padding-right: px;
+          @include display(column);
+          justify-content: center;
+          font-size: 10px;
+
+          h3 {
+            font-weight: 400;
+            font-size: 17px;
+          }
+
+          span {
+            font-weight: 300;
+            font-size: 10px;
+          }
+        }
+      }
+      .info-2 {
+        h6 {
+          font-size: 12px;
+        }
+      }
+      .info-3 {
+        font-size: 12px;
+        h2 {
+          font-size: 15px;
+        }
+      }
+
+      .user-card-link {
+        ul {
+          li {
+
+            a {
+              color: black;
+              font-size: 16px;
+            }
+          }
+
+          }
+        }
+      }
+    }
+
+    .user-info-container {
+      background: #ffffff;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      padding: 2% 2%;
+    }
+    .personal-info-card {
+      padding: 1.5% 2%;
+      border-bottom: 1px solid #e3e3e4;
+
+      h6 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .row {
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        h6 {
+          border: none;
+          font-size: 13px;
+          color: $paragraphFont;
+          font-weight: lighter;
+          text-transform: uppercase;
+          padding-bottom: 0px;
+        }
+
+        h3 {
+          border: none;
+          font-size: 15px;
+          color: $paragraphFont;
+          font-weight: 559;
+          // padding-top: 5px;
+        }
+
+        .col-sm-4 {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          margin-right: 5px;
+        }
+      }
+    }
   }
 }

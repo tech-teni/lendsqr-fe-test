@@ -6,19 +6,23 @@ import Sidebar from "./parts/Sidebar";
 import UserCard from "./parts/UserCard";
 import axios from "axios";
 import { User } from "../types";
+import { HiOutlineMenu } from "react-icons/hi";
+import MobileMenu from "./parts/MobilMenu";
 
 const UserPage = () => {
+  const { pathname } = useLocation();
   const [filter, setFilter] = useState<boolean>(false);
   const showFilter = () => {
     setFilter(!filter);
   };
 
-  //
-  const { pathname } = useLocation();
-
   console.log(pathname);
   const [users, setUsers] = useState<User[]>([]);
+  const [sideBar, setSideBar] = useState<boolean>(false);
 
+  const showSideBar = () => {
+    setSideBar(!sideBar);
+  };
   const navigate = useNavigate();
 
   const fetchAllUser = async () => {
@@ -36,8 +40,15 @@ const UserPage = () => {
     <div className="dashboard main">
       <Navbar />
       <div className="row mx-0">
-        <Sidebar />
-        <section className="section-content col-lg-10 col-md-10 col-sm-11">
+        <Sidebar showSideBar={showSideBar} sideBar={sideBar} />
+        <MobileMenu showSideBar={showSideBar} sideBar={sideBar} />
+        <section className="section-content col-lg-10 col-md-11 ">
+          {/* mobile menu */}
+          <div className="toggle-mobile-menu" onClick={showSideBar}>
+            show menu
+            <HiOutlineMenu />
+          </div>
+          {/* end of mobile menu */}
           <h6>Users</h6>
           <div className="total-users row">
             <UserCard
@@ -182,7 +193,7 @@ const UserPage = () => {
               </thead>
               <tbody>
                 {users.map((user) => (
-                  <tr>
+                  <tr onClick={() => navigate(`/details/${user.id}`)}>
                     <td>{user.orgName}</td>
                     <td>{user.userName}</td>
                     <td>{user.email}</td>
@@ -201,10 +212,7 @@ const UserPage = () => {
                       </button>
                     </td>
 
-                    <td
-                      onClick={() => navigate(`/details/${user.id}`)}
-                      className="td-modal"
-                    >
+                    <td className="td-modal">
                       <img src="./img/three-dots.svg" alt="" />
                       <div className="view-details-modal">
                         <div className="">

@@ -63,8 +63,98 @@
   }
 }
 
+// *************************************************
+@media screen and (max-width: $mediaQueryPhone) {
+  .side-bar {
+    width: 10%;
+    .side-link {
+      h5 {
+        display: none;
+      }
+    }
+    .organization {
+      padding-left: $layoutPadding;
+
+      select {
+        display: none;
+      }
+      label {
+        display: none;
+      }
+    }
+
+    h3 {
+      display: none;
+    }
+  }
+}
+
+//*****************************************************
+@media screen and (max-width: $mediaQueryTablet) {
+  .side-bar {
+    .side-link {
+      h5 {
+        display: none;
+      }
+    }
+    .organization {
+      padding-left: $layoutPadding;
+
+      select {
+        display: none;
+      }
+      label {
+        display: none;
+      }
+    }
+
+    h3 {
+      display: none;
+    }
+  }
+}
+
+// *************************
+@media screen and (max-width: 500px) {
+  #mobile-menu {
+    display: none;
+    width: 10%;
+    box-sizing: border-box;
+  }
+  .section-content {
+    width: 90%;
+  }
+  .toggle-mobile-menu {
+    display: none;
+  }
+}
+
+// *********media query phone*********************
 @media screen and (max-width: $mediaQueriesPhone) {
   .side-bar {
     display: none;
+    width: 40%;
   }
+  .toggle-mobile-menu {
+    display: block;
+    margin-bottom: 10px;
+    color: $primaryColor;
+  }
+}
+
+// ***************************media for deskstop
+
+@media screen and (min-width: 500px) {
+  .toggle-mobile-menu {
+    display: none;
+  }
+  #mobile-menu {
+    display: none;
+    width: 10%;
+    box-sizing: border-box;
+  }
+}
+
+.toggle-mobile-menu {
+  color: $primaryColor;
 }

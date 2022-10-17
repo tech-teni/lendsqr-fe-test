@@ -30,7 +30,13 @@
   flex-direction: column;
 }
 .login .form-section input {
+  background: #ffffff;
   width: 100%;
+  color: rgba(84, 95, 125, 0.15);
+  border-radius: 5px;
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  margin-bottom: 20px;
+  height: 50px;
 }
 .login .form-section #log-in {
   background-color: #39cdcc;
@@ -55,9 +61,21 @@
 }
 .login .form-section .show-password {
   font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #39cdcc;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: -50px;
+  padding-right: 10px;
 }
 .login .form-section .forgot-password {
   margin-top: 20px;
+  font-size: 13px;
+  margin-top: 20px;
+  color: #39cdcc;
+  text-transform: uppercase;
   font-size: 13px;
 }
 
@@ -69,7 +87,7 @@
     justify-content: center;
   }
   .login .login-nav {
-    margin-top: 20%;
+    margin-top: 5%;
   }
   .login .logo {
     width: 1.5rem;
@@ -115,6 +133,7 @@
     flex-direction: row;
     justify-content: flex-end;
     margin-top: -50px;
+    padding-right: 5px;
   }
   .login .form-section .show-password i {
     font-style: normal;
@@ -122,9 +141,8 @@
     color: #39cdcc;
   }
   .login .form-section .forgot-password {
-    margin-top: 20px;
+    margin-top: 30px;
     color: #39cdcc;
     text-transform: uppercase;
-    font-size: 13px;
   }
 }/*# sourceMappingURL=login.css.map */

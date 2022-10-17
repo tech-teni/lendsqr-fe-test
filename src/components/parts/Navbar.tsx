@@ -1,10 +1,14 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 
+//  col-lg-2 col-md-3 col-sm-4
+
+// col-lg-6 col-md-6 col-sm-5
+// col-lg-4 col-md-8 col-sm-6
 const Navbar = () => {
   return (
     <nav className="row nav-bar">
-      <div className="logo-container col-lg-2 col-md-2 col-sm-2">
+      <div className="logo-container">
         <div>
           <img src="./img/Union.png" alt="" className="logo" />
         </div>
@@ -13,14 +17,14 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="search-bar col-lg-6 col-md-6 col-sm-12">
+      <div className="search-bar ">
         <input type="text" placeholder="Search for anything" />
         <div className="search-icon">
           <AiOutlineSearch />
         </div>
       </div>
 
-      <div className="more-info col-lg-4 col-md-4 col-sm-12">
+      <div className="more-info ">
         <a>Docs</a>
         <img src="./img/Vector.png" alt="" />
         <div>

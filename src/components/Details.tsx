@@ -5,6 +5,8 @@ import Navbar from "./parts/Navbar";
 import Sidebar from "./parts/Sidebar";
 import { User } from "../types";
 import axios from "axios";
+import { HiOutlineMenu } from "react-icons/hi";
+import MobileMenu from "./parts/MobilMenu";
 
 const Details = () => {
   const { pathname } = useLocation();
@@ -14,6 +16,11 @@ const Details = () => {
   const [user, setUser] = useState<User>();
   const param = useParams();
 
+  const [sideBar, setSideBar] = useState<boolean>(false);
+
+  const showSideBar = () => {
+    setSideBar(!sideBar);
+  };
   const fetchAllUser = async () => {
     const res = await axios.get(
       `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${param.id}`
@@ -25,7 +32,6 @@ const Details = () => {
 
     setUser(res.data);
     localStorage.setItem("user", JSON.stringify(res.data));
-    localStorage.getItem("uses");
   };
 
   useEffect(() => {
@@ -36,8 +42,17 @@ const Details = () => {
     <div className="dashboard main">
       <Navbar />
       <div className="row mx-0">
-        <Sidebar />
+        <Sidebar showSideBar={showSideBar} sideBar={sideBar} />
+        <MobileMenu showSideBar={showSideBar} sideBar={sideBar} />
+
         <section className="section-content col-lg-10 col-md-10 col-sm-11">
+          {/* mobile menu */}
+          <div className="toggle-mobile-menu" onClick={showSideBar}>
+            show menu
+            <HiOutlineMenu />
+          </div>
+          {/* end of mobile menu */}
+
           <div className="d-flex ">
             <svg
               width="28"
@@ -57,96 +72,103 @@ const Details = () => {
 
           <h6>User Details</h6>
           <div className="total-users ">
-            <div className="user-card2">
-              <div className="user-card-info ">
-                <div className="info-1">
-                  <div className="user-img-container">
-                    <img
-                      src={user?.profile?.avatar}
-                      alt=""
-                      className="user-img"
-                    />{" "}
+            <table className=" ">
+              <tr>
+                <th>
+                  {" "}
+                  <div className="user-card2">
+                    <div className="user-card-info ">
+                      <div className="info-1">
+                        <div className="user-img-container">
+                          <img
+                            src={user?.profile?.avatar}
+                            alt=""
+                            className="user-img"
+                          />{" "}
+                        </div>
+                        <div className="user-full-name">
+                          <h3>{`${user?.profile?.firstName} ${user?.profile?.lastName}`}</h3>
+                          <span>{user?.accountNumber}</span>
+                        </div>
+                      </div>
+                      <div className="info-2">
+                        <h6>User's Tier</h6>
+                        <div className="">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M7.98572 1.28751C7.85197 1.29314 7.73572 1.38126 7.69447 1.50876L6.18759 6.17996L1.28071 6.16996C1.14196 6.16996 1.01821 6.25934 0.975716 6.39121C0.932591 6.52371 0.980091 6.66809 1.09259 6.74996L5.06891 9.62676L3.54203 14.293C3.49891 14.4249 3.54578 14.5699 3.65828 14.6511C3.77016 14.733 3.92265 14.733 4.03454 14.6511L7.9995 11.758L11.9657 14.6511C12.0776 14.733 12.2301 14.733 12.342 14.6511C12.4545 14.5699 12.5014 14.4249 12.4582 14.293L10.9314 9.62676L14.9077 6.74996C15.0202 6.66809 15.0677 6.52371 15.0246 6.39121C14.9814 6.25933 14.8583 6.16996 14.7196 6.17059L9.81269 6.18059L8.30393 1.50939V1.50876C8.25956 1.37188 8.12957 1.28188 7.98581 1.28751L7.98572 1.28751Z"
+                              fill="#E9B200"
+                            />
+                          </svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M7.98572 1.28751C7.85197 1.29314 7.73572 1.38126 7.69447 1.50876L6.18759 6.17996L1.28071 6.16996C1.14196 6.16996 1.01821 6.25934 0.975716 6.39121C0.932591 6.52371 0.980091 6.66809 1.09259 6.74996L5.06891 9.62676L3.54203 14.293C3.49891 14.4249 3.54578 14.5699 3.65828 14.6511C3.77016 14.733 3.92265 14.733 4.03454 14.6511L7.9995 11.758L11.9657 14.6511C12.0776 14.733 12.2301 14.733 12.342 14.6511C12.4545 14.5699 12.5014 14.4249 12.4582 14.293L10.9314 9.62676L14.9077 6.74996C15.0202 6.66809 15.0677 6.52371 15.0246 6.39121C14.9814 6.25933 14.8583 6.16996 14.7196 6.17059L9.81269 6.18059L8.30393 1.50939V1.50876C8.25956 1.37188 8.12957 1.28188 7.98581 1.28751L7.98572 1.28751Z"
+                              fill="#E9B200"
+                            />
+                          </svg>
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M7.98572 1.28751C7.85197 1.29314 7.73572 1.38126 7.69447 1.50876L6.18759 6.17996L1.28071 6.16996C1.14196 6.16996 1.01821 6.25934 0.975716 6.39121C0.932591 6.52371 0.980091 6.66809 1.09259 6.74996L5.06891 9.62676L3.54203 14.293C3.49891 14.4249 3.54578 14.5699 3.65828 14.6511C3.77016 14.733 3.92265 14.733 4.03454 14.6511L7.9995 11.758L11.9657 14.6511C12.0776 14.733 12.2301 14.733 12.342 14.6511C12.4545 14.5699 12.5014 14.4249 12.4582 14.293L10.9314 9.62676L14.9077 6.74996C15.0202 6.66809 15.0677 6.52371 15.0246 6.39121C14.9814 6.25933 14.8583 6.16996 14.7196 6.17059L9.81269 6.18059L8.30393 1.50939V1.50876C8.25956 1.37188 8.12957 1.28188 7.98581 1.28751L7.98572 1.28751Z"
+                              fill="#E9B200"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="info-3">
+                        <h2>₦{user?.accountBalance}</h2>
+                        <span>9912345678/Providus Bank</span>
+                      </div>
+                    </div>
+                    <div className="user-card-link">
+                      <ul>
+                        <li className="selected">
+                          <a href="">General Details</a>{" "}
+                        </li>
+                        <li>
+                          <a href="">Documents</a>{" "}
+                        </li>
+                        <li>
+                          <a href="">Bank Details</a>{" "}
+                        </li>
+                        <li>
+                          <a href="">Loans</a>{" "}
+                        </li>
+                        <li>
+                          <a href="">Savings</a>{" "}
+                        </li>
+                        <li>
+                          <a href="">App and System</a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div className="user-full-name">
-                    <h3>{`${user?.profile?.firstName} ${user?.profile?.lastName}`}</h3>
-                    <span>{user?.accountNumber}</span>
-                  </div>
-                </div>
-                <div className="info-2">
-                  <h6>User's Tier</h6>
-                  <div className="">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7.98572 1.28751C7.85197 1.29314 7.73572 1.38126 7.69447 1.50876L6.18759 6.17996L1.28071 6.16996C1.14196 6.16996 1.01821 6.25934 0.975716 6.39121C0.932591 6.52371 0.980091 6.66809 1.09259 6.74996L5.06891 9.62676L3.54203 14.293C3.49891 14.4249 3.54578 14.5699 3.65828 14.6511C3.77016 14.733 3.92265 14.733 4.03454 14.6511L7.9995 11.758L11.9657 14.6511C12.0776 14.733 12.2301 14.733 12.342 14.6511C12.4545 14.5699 12.5014 14.4249 12.4582 14.293L10.9314 9.62676L14.9077 6.74996C15.0202 6.66809 15.0677 6.52371 15.0246 6.39121C14.9814 6.25933 14.8583 6.16996 14.7196 6.17059L9.81269 6.18059L8.30393 1.50939V1.50876C8.25956 1.37188 8.12957 1.28188 7.98581 1.28751L7.98572 1.28751Z"
-                        fill="#E9B200"
-                      />
-                    </svg>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7.98572 1.28751C7.85197 1.29314 7.73572 1.38126 7.69447 1.50876L6.18759 6.17996L1.28071 6.16996C1.14196 6.16996 1.01821 6.25934 0.975716 6.39121C0.932591 6.52371 0.980091 6.66809 1.09259 6.74996L5.06891 9.62676L3.54203 14.293C3.49891 14.4249 3.54578 14.5699 3.65828 14.6511C3.77016 14.733 3.92265 14.733 4.03454 14.6511L7.9995 11.758L11.9657 14.6511C12.0776 14.733 12.2301 14.733 12.342 14.6511C12.4545 14.5699 12.5014 14.4249 12.4582 14.293L10.9314 9.62676L14.9077 6.74996C15.0202 6.66809 15.0677 6.52371 15.0246 6.39121C14.9814 6.25933 14.8583 6.16996 14.7196 6.17059L9.81269 6.18059L8.30393 1.50939V1.50876C8.25956 1.37188 8.12957 1.28188 7.98581 1.28751L7.98572 1.28751Z"
-                        fill="#E9B200"
-                      />
-                    </svg>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M7.98572 1.28751C7.85197 1.29314 7.73572 1.38126 7.69447 1.50876L6.18759 6.17996L1.28071 6.16996C1.14196 6.16996 1.01821 6.25934 0.975716 6.39121C0.932591 6.52371 0.980091 6.66809 1.09259 6.74996L5.06891 9.62676L3.54203 14.293C3.49891 14.4249 3.54578 14.5699 3.65828 14.6511C3.77016 14.733 3.92265 14.733 4.03454 14.6511L7.9995 11.758L11.9657 14.6511C12.0776 14.733 12.2301 14.733 12.342 14.6511C12.4545 14.5699 12.5014 14.4249 12.4582 14.293L10.9314 9.62676L14.9077 6.74996C15.0202 6.66809 15.0677 6.52371 15.0246 6.39121C14.9814 6.25933 14.8583 6.16996 14.7196 6.17059L9.81269 6.18059L8.30393 1.50939V1.50876C8.25956 1.37188 8.12957 1.28188 7.98581 1.28751L7.98572 1.28751Z"
-                        fill="#E9B200"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div className="info-3">
-                  <h2>₦{user?.accountBalance}</h2>
-                  <span>9912345678/Providus Bank</span>
-                </div>
-              </div>
-              <div className="user-card-link">
-                <ul>
-                  <li className="selected">
-                    <a href="">General Details</a>{" "}
-                  </li>
-                  <li>
-                    <a href="">Documents</a>{" "}
-                  </li>
-                  <li>
-                    <a href="">Bank Details</a>{" "}
-                  </li>
-                  <li>
-                    <a href="">Loans</a>{" "}
-                  </li>
-                  <li>
-                    <a href="">Savings</a>{" "}
-                  </li>
-                  <li>
-                    <a href="">App and System</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+                </th>
+              </tr>
+            </table>
           </div>
 
           <div className="user-info-container">
