@@ -1,0 +1,9 @@
+// mixins
+@mixin display($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@import "../variables/variables";
+@import "../components/navbar";
+@import "../components/sidebar";

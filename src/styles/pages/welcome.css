@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #213f7d;
+  margin: 0;
+}
+.home .logo {
+  width: 5rem;
+}
+.home .company-name {
+  margin-top: 1px;
+  margin-left: 5px;
+  font-weight: bolder;
+  font-size: 5rem;
+}/*# sourceMappingURL=welcome.css.map */

@@ -1,0 +1,130 @@
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.login .login-nav {
+  margin-top: 10%;
+}
+.login .logo-container {
+  display: flex;
+  flex-direction: row;
+}
+.login .logo {
+  width: 1.5rem;
+}
+.login .company-name {
+  width: 7.5rem;
+  margin-top: 0px;
+  margin-left: 5px;
+}
+.login .main-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.login .form-section {
+  display: flex;
+  flex-direction: column;
+}
+.login .form-section input {
+  width: 100%;
+}
+.login .form-section #log-in {
+  background-color: #39cdcc;
+  color: white;
+  border: none;
+  margin-top: 20px;
+}
+.login .form-section h1 {
+  color: #213f7d;
+  font-weight: bold;
+  font-size: 40px;
+}
+.login .form-section p {
+  font-weight: 200;
+  color: #545f7d;
+  margin-bottom: 30px;
+}
+.login .form-section input {
+  padding: 10px;
+  font-size: 12px;
+  color: #545f7d;
+}
+.login .form-section .show-password {
+  font-size: 12px;
+}
+.login .form-section .forgot-password {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 500px) {
+  .login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .login .login-nav {
+    margin-top: 20%;
+  }
+  .login .logo {
+    width: 1.5rem;
+  }
+  .login .company-name {
+    width: 7.5rem;
+    margin-top: 0px;
+    margin-left: 5px;
+  }
+  .login .main-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .login .form-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .login .form-section input {
+    width: 100%;
+  }
+  .login .form-section h1 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .login .form-section p {
+    text-align: center;
+  }
+  .login .form-section #log-in {
+    background-color: #39cdcc;
+    color: white;
+    border: none;
+    margin-top: 20px;
+  }
+  .login .form-section .show-password {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #39cdcc;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: -50px;
+  }
+  .login .form-section .show-password i {
+    font-style: normal;
+    margin-right: 10px;
+    color: #39cdcc;
+  }
+  .login .form-section .forgot-password {
+    margin-top: 20px;
+    color: #39cdcc;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+}/*# sourceMappingURL=login.css.map */
