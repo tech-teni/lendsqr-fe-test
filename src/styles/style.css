@@ -87,6 +87,9 @@
 
 /********************************************/
 @media screen and (max-width: 500px) {
+  .nav-bar .logo-container {
+    width: 20%;
+  }
   .nav-bar .logo-container .logo {
     width: 1.2rem;
   }
@@ -97,6 +100,8 @@
   }
   .nav-bar .search-bar {
     margin-top: 10px;
+    display: none;
+    width: 0%;
   }
   .nav-bar .search-bar input {
     padding-left: 10px;
@@ -107,19 +112,25 @@
     height: 30px;
   }
   .nav-bar .more-info {
-    justify-content: space-around;
+    width: 80%;
+    justify-content: flex-start;
     margin-top: 20px;
   }
   .nav-bar .more-info h3 {
-    font-size: 12px;
+    margin-left: 15px;
+  }
+  .nav-bar .more-info a {
+    margin-right: 15px;
   }
   .nav-bar .more-info .user-image {
     width: 30px;
     height: 30px;
+    margin-left: 15px;
   }
   .nav-bar .more-info .username div {
     margin-right: 10px;
     font-size: 10px;
+    margin-left: 15px;
   }
 }
 .side-link-colored {
@@ -226,8 +237,7 @@
 }
 @media screen and (max-width: 500px) {
   .side-bar {
-    display: none;
-    width: 40%;
+    width: 10%;
   }
   .toggle-mobile-menu {
     display: block;
@@ -679,6 +689,7 @@ body {
 
 table {
   width: 100%;
+  background-color: white;
 }
 table tr {
   width: 100%;
@@ -764,7 +775,7 @@ table tr {
   padding: 0px 5px;
 }
 .user-card2 .user-card-link ul li a {
-  color: black;
+  color: #3a3a3a;
   font-size: 16px;
 }
 .user-card2 .user-card-link ul .selected {
@@ -847,44 +858,31 @@ table tr {
   .user-card2 .user-card-info .info-3 h2 {
     font-size: 15px;
   }
-  .user-card2 .user-card-info .user-card-link ul li {
-    text-decoration: none;
-    list-style-type: none;
-    font-size: 13px;
-    text-align: center;
-    padding: 0px 5px;
+  .user-card2 .user-card-link ul {
+    width: 100%;
+    padding-top: 10px;
   }
-  .user-card2 .user-card-info .user-card-link ul li a {
-    color: black;
-    font-size: 16px;
+  .user-card2 .user-card-link ul li a {
+    font-size: 12px;
   }
-  .user-card2 .user-card-info .user-card-link ul .selected {
-    border-bottom: 2px solid #39cdcc;
+  .user-card2 .user-card-link ul .selected {
+    font-size: 12px;
   }
-  .user-card2 .user-card-info .user-card-link ul .selected a {
-    color: #39cdcc;
-  }
-  .user-card2 .user-info-container {
-    background: #ffffff;
-    border: 1px solid rgba(33, 63, 125, 0.06);
-    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-    border-radius: 4px;
-    padding: 2% 2%;
-  }
-  .user-card2 .personal-info-card {
+  .personal-info-card {
     padding: 1.5% 2%;
     border-bottom: 1px solid #e3e3e4;
   }
-  .user-card2 .personal-info-card h6 {
+  .personal-info-card h6 {
     font-size: 16px;
     font-weight: bold;
   }
-  .user-card2 .personal-info-card .row {
+  .personal-info-card .row {
     width: 100%;
     margin-top: 25px;
     margin-bottom: 20px;
+    display: flex;
   }
-  .user-card2 .personal-info-card .row h6 {
+  .personal-info-card .row h6 {
     border: none;
     font-size: 13px;
     color: #545f7d;
@@ -892,13 +890,13 @@ table tr {
     text-transform: uppercase;
     padding-bottom: 0px;
   }
-  .user-card2 .personal-info-card .row h3 {
+  .personal-info-card .row h3 {
     border: none;
     font-size: 15px;
     color: #545f7d;
     font-weight: 559;
   }
-  .user-card2 .personal-info-card .row .col-sm-4 {
+  .personal-info-card .row .col-sm-4 {
     margin-top: 20px;
     margin-bottom: 10px;
     margin-right: 5px;

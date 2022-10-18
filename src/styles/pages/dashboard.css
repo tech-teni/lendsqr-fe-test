@@ -87,6 +87,9 @@
 
 /********************************************/
 @media screen and (max-width: 500px) {
+  .nav-bar .logo-container {
+    width: 20%;
+  }
   .nav-bar .logo-container .logo {
     width: 1.2rem;
   }
@@ -97,6 +100,8 @@
   }
   .nav-bar .search-bar {
     margin-top: 10px;
+    display: none;
+    width: 0%;
   }
   .nav-bar .search-bar input {
     padding-left: 10px;
@@ -107,19 +112,25 @@
     height: 30px;
   }
   .nav-bar .more-info {
-    justify-content: space-around;
+    width: 80%;
+    justify-content: flex-start;
     margin-top: 20px;
   }
   .nav-bar .more-info h3 {
-    font-size: 12px;
+    margin-left: 15px;
+  }
+  .nav-bar .more-info a {
+    margin-right: 15px;
   }
   .nav-bar .more-info .user-image {
     width: 30px;
     height: 30px;
+    margin-left: 15px;
   }
   .nav-bar .more-info .username div {
     margin-right: 10px;
     font-size: 10px;
+    margin-left: 15px;
   }
 }
 .side-link-colored {
@@ -226,8 +237,7 @@
 }
 @media screen and (max-width: 500px) {
   .side-bar {
-    display: none;
-    width: 40%;
+    width: 10%;
   }
   .toggle-mobile-menu {
     display: block;

@@ -302,6 +302,7 @@ body {
 //details page
 table {
   width: 100%;
+  background-color: white;
 
   tr {
     width: 100%;
@@ -387,7 +388,7 @@ table {
         padding: 0px 5px;
 
         a {
-          color: black;
+          color: #3a3a3a;
           font-size: 16px;
         }
       }
@@ -486,64 +487,63 @@ table {
           font-size: 15px;
         }
       }
-
-      .user-card-link {
-        ul {
-          li {
-
-            a {
-              color: black;
-              font-size: 16px;
-            }
+    }
+    .user-card-link {
+      ul {
+        width: 100%;
+        padding-top: 10px;
+        li {
+          a {
+            font-size: 12px;
           }
+        }
 
-          }
+        .selected {
+          font-size: 12px;
         }
       }
     }
+  }
 
-    .user-info-container {
-      background: #ffffff;
-      border: 1px solid rgba(33, 63, 125, 0.06);
-      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-      border-radius: 4px;
-      padding: 2% 2%;
+  .user-info-container {
+  }
+  .personal-info-card {
+    padding: 1.5% 2%;
+    border-bottom: 1px solid #e3e3e4;
+
+    h6 {
+      font-size: 16px;
+      font-weight: bold;
     }
-    .personal-info-card {
-      padding: 1.5% 2%;
-      border-bottom: 1px solid #e3e3e4;
+
+    .row {
+      width: 100%;
+      margin-top: 25px;
+      margin-bottom: 20px;
+      display: flex;
 
       h6 {
-        font-size: 16px;
-        font-weight: bold;
+        border: none;
+        font-size: 13px;
+        color: $paragraphFont;
+        font-weight: lighter;
+        text-transform: uppercase;
+        padding-bottom: 0px;
       }
 
-      .row {
-        width: 100%;
-        margin-top: 25px;
-        margin-bottom: 20px;
-        h6 {
-          border: none;
-          font-size: 13px;
-          color: $paragraphFont;
-          font-weight: lighter;
-          text-transform: uppercase;
-          padding-bottom: 0px;
-        }
+      h3 {
+        border: none;
+        font-size: 15px;
+        color: $paragraphFont;
+        font-weight: 559;
+        // padding-top: 5px;
+      }
 
-        h3 {
-          border: none;
-          font-size: 15px;
-          color: $paragraphFont;
-          font-weight: 559;
-          // padding-top: 5px;
-        }
-
-        .col-sm-4 {
-          margin-top: 20px;
-          margin-bottom: 10px;
-          margin-right: 5px;
-        }
+      .col-sm-4 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-right: 5px;
+        // width: 48%;
       }
     }
   }

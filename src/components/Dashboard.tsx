@@ -42,14 +42,8 @@ const Dashboard = () => {
       <Navbar />
       <div className="row mx-0">
         <Sidebar showSideBar={showSideBar} sideBar={sideBar} />
-        <MobileMenu showSideBar={showSideBar} sideBar={sideBar} />
+        {/* <MobileMenu showSideBar={showSideBar} sideBar={sideBar} /> */}
         <section className="section-content col-lg-10 col-md-11 ">
-          {/* mobile menu */}
-          <div className="toggle-mobile-menu" onClick={showSideBar}>
-            show menu
-            <HiOutlineMenu />
-          </div>
-          {/* end of mobile menu */}
           <h6>Users</h6>
           <div className="total-users row">
             <UserCard

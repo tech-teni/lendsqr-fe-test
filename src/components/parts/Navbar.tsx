@@ -7,8 +7,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 // col-lg-4 col-md-8 col-sm-6
 const Navbar = () => {
   return (
-    <nav className="row nav-bar">
-      <div className="logo-container">
+    <nav className="row nav-bar table">
+      <div className="logo-container ">
         <div>
           <img src="./img/Union.png" alt="" className="logo" />
         </div>

@@ -43,16 +43,9 @@ const Details = () => {
       <Navbar />
       <div className="row mx-0">
         <Sidebar showSideBar={showSideBar} sideBar={sideBar} />
-        <MobileMenu showSideBar={showSideBar} sideBar={sideBar} />
+        {/* <MobileMenu showSideBar={showSideBar} sideBar={sideBar} /> */}
 
         <section className="section-content col-lg-10 col-md-10 col-sm-11">
-          {/* mobile menu */}
-          <div className="toggle-mobile-menu" onClick={showSideBar}>
-            show menu
-            <HiOutlineMenu />
-          </div>
-          {/* end of mobile menu */}
-
           <div className="d-flex ">
             <svg
               width="28"
@@ -172,7 +165,7 @@ const Details = () => {
           </div>
 
           <div className="user-info-container">
-            <div className="personal-info-card">
+            <div className="personal-info-card ">
               <h6>Personal Information</h6>
               <div className="row">
                 <div className="col-lg-2 col-md-3 col-sm-4">

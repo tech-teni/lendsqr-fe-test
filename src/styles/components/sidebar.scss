@@ -132,8 +132,8 @@
 // *********media query phone*********************
 @media screen and (max-width: $mediaQueriesPhone) {
   .side-bar {
-    display: none;
-    width: 40%;
+    // display: none;
+    width: 10%;
   }
   .toggle-mobile-menu {
     display: block;
