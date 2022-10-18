@@ -89,6 +89,7 @@
 @media screen and (max-width: 500px) {
   .nav-bar .logo-container {
     width: 20%;
+    margin-right: 10px;
   }
   .nav-bar .logo-container .logo {
     width: 1.2rem;
@@ -112,7 +113,9 @@
     height: 30px;
   }
   .nav-bar .more-info {
-    width: 80%;
+    width: 70%;
+    margin-left: 20px;
+    padding-left: 20px;
     justify-content: flex-start;
     margin-top: 20px;
   }

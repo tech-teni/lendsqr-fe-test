@@ -112,7 +112,9 @@
     height: 30px;
   }
   .nav-bar .more-info {
-    width: 80%;
+    width: 70%;
+    margin-left: 20px;
+    padding-left: 20px;
     justify-content: flex-start;
     margin-top: 20px;
   }
@@ -348,7 +350,7 @@
     justify-content: center;
   }
   .login .login-nav {
-    margin-top: 5%;
+    margin-top: 2%;
   }
   .login .logo {
     width: 1.5rem;
