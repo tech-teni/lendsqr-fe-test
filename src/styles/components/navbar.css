@@ -116,7 +116,7 @@
     width: 70%;
     margin-left: 20px;
     padding-left: 20px;
-    justify-content: flex-start;
+    justify-content: flex-end;
     margin-top: 20px;
   }
   .nav-bar .more-info h3 {
